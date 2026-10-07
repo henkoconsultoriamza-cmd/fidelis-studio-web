@@ -6,11 +6,11 @@ type Variant = "acid" | "outline" | "dark" | "bare";
 type Size = "sm" | "md" | "lg";
 
 const variants: Record<Variant, string> = {
-  acid: "bg-acid text-acid-foreground hover:bg-[#2ce85a] active:bg-[#25d150]",
+  acid: "bg-acid text-acid-foreground hover:bg-[#D8D3CB] active:bg-[#C8C3BB]",
   outline:
-    "border border-border text-foreground hover:border-acid hover:text-acid active:text-acid",
+    "border border-border text-foreground hover:border-foreground hover:text-foreground active:text-foreground",
   dark: "bg-background text-foreground hover:bg-elevated",
-  bare: "text-foreground hover:text-acid underline underline-offset-4 decoration-border hover:decoration-acid",
+  bare: "text-foreground hover:text-foreground underline underline-offset-4 decoration-border hover:decoration-foreground",
 };
 
 const sizes: Record<Size, string> = {
