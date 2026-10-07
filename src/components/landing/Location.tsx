@@ -6,14 +6,14 @@ export function Location() {
   return (
     <section id="contacto" className="scroll-mt-24 py-20 md:py-28">
       <div className="mx-auto w-full max-w-[1600px] px-5 md:px-8">
-        <h2 className="font-display reveal text-[clamp(2.2rem,6.5vw,5.5rem)]">
-          Encontranos<span className="text-acid">.</span>
-        </h2>
-
-        <div className="mt-12 grid items-stretch gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="reveal flex flex-col justify-between gap-10 rounded-[4px] border border-border p-8 md:p-10">
+        <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-16">
+          <div className="reveal flex flex-col justify-between">
             <div>
-              <p className="label-tech">Dirección</p>
+              <h2 className="font-display text-[clamp(2.2rem,6.5vw,5.5rem)]">
+                Encontranos<span className="text-acid">.</span>
+              </h2>
+
+              <p className="label-tech mt-12">Dirección</p>
               <p className="mt-3 text-lg">
                 {brand.name}
                 <br />
@@ -38,7 +38,7 @@ export function Location() {
               <p className="label-tech mt-4 text-foreground/40">{contact.note}</p>
             </div>
 
-            <ul className="flex flex-wrap gap-x-8 gap-y-3 border-t border-border pt-8 text-sm">
+            <ul className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm">
               {contact.phone ? (
                 <li>
                   <a className="transition-colors hover:text-foreground/60" href={contact.phoneHref}>
