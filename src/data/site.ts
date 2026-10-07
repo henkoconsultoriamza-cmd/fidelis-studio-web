@@ -159,20 +159,19 @@ export const REVIEWS = [
 ];
 
 export const HOURS = [
-  { days: "Lunes a viernes", time: "10:00 a 20:00" },
-  { days: "Sábado", time: "09:00 a 18:00" },
+  { days: "Lunes a sábado", time: "14:00 a 20:00" },
   { days: "Domingo", time: "Cerrado" },
 ];
 
-export const HOURS_SHORT = "Lun a vie 10–20 · Sáb 9–18 · Dom cerrado";
+export const HOURS_SHORT = "Lun a sáb 14–20 · Dom cerrado";
 
 export const CONTACT = {
   street: "Patricias Mendocinas 826",
   cityLine: "Las Heras, Mendoza",
-  phone: "+54 261 555 1234",
-  phoneHref: "tel:+542615551234",
-  whatsapp: "https://wa.me/542615551234",
-  whatsappLabel: "+54 261 555 1234",
+  phone: "+54 9 2616 68-6085",
+  phoneHref: "tel:+5492616686085",
+  whatsapp: "https://wa.me/5492616686085",
+  whatsappLabel: "+54 9 2616 68-6085",
   email: "hola@fidelisstudio.com",
   instagram: "https://instagram.com/f.idelis_studio",
   instagramHandle: "@f.idelis_studio",
