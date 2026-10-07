@@ -43,9 +43,10 @@ export function Manifesto() {
       </div>
 
       <div className="mx-auto w-full max-w-[1600px] px-5 md:px-8">
-        <dl className="grid divide-y divide-border border-b border-border md:grid-cols-3 md:divide-x md:divide-y-0">
-          {ATTRIBUTES.map((item) => (
-            <div key={item.title} className="reveal py-8 md:px-8 md:first:pl-0 md:last:pr-0">
+        <div className="reveal-line border-t border-border" />
+        <dl className="grid md:grid-cols-3">
+          {ATTRIBUTES.map((item, i) => (
+            <div key={item.title} className="reveal border-b border-border py-10 md:px-8 md:first:pl-0 md:last:pr-0" style={{ transitionDelay: `${i * 0.1}s` }}>
               <span className="label-tech">{item.n}</span>
               <dt className="font-display mt-3 text-2xl md:text-3xl">{item.title}</dt>
               <dd className="mt-3 max-w-xs text-sm text-muted-foreground">{item.text}</dd>

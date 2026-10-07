@@ -39,8 +39,7 @@ export function Gallery() {
                 loading="lazy"
                 decoding="async"
                 className={cn(
-                  "h-full w-full object-cover transition-[transform,filter] duration-500 group-hover:scale-[1.03]",
-                  item.tone === "bw" ? "grayscale group-hover:grayscale-0" : "",
+                  "h-full w-full object-cover grayscale transition-[transform,filter] duration-500 group-hover:scale-[1.03] group-hover:grayscale-0",
                   "aspect-[3/4] md:aspect-auto",
                 )}
               />

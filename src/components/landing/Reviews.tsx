@@ -25,17 +25,27 @@ export function Reviews() {
           </div>
 
           <div className="reveal lg:col-span-8">
-            <div aria-live="polite" className="min-h-[220px]">
-              <p className="flex items-center gap-1" aria-label={`${review.rating} de 5 estrellas`}>
+            <div aria-live=”polite” className=”min-h-[220px]”>
+              <p className=”flex items-center gap-1” aria-label={`${review.rating} de 5 estrellas`}>
                 {Array.from({ length: review.rating }).map((_, i) => (
-                  <Star key={i} aria-hidden="true" className="h-4 w-4 fill-acid text-acid" />
+                  <Star key={i} aria-hidden=”true” className=”h-4 w-4 fill-foreground text-foreground” />
                 ))}
-                <span className="label-tech ml-2">{review.rating},0 / 5</span>
+                <span className=”label-tech ml-2”>{review.rating},0 / 5</span>
               </p>
-              <blockquote className="font-display mt-6 text-[clamp(1.4rem,3.4vw,2.6rem)] leading-[1.05]">
+              <blockquote
+                key={index}
+                className=”font-display mt-6 text-[clamp(1.4rem,3.4vw,2.6rem)] leading-[1.05]”
+                style={{ animation: “fadeSlideIn 0.4s cubic-bezier(0.16,1,0.3,1) both” }}
+              >
                 “{review.quote}”
               </blockquote>
-              <p className="mt-6 text-sm text-muted-foreground">— {review.author}</p>
+              <p
+                key={`author-${index}`}
+                className=”mt-6 text-sm text-muted-foreground”
+                style={{ animation: “fadeSlideIn 0.4s 0.08s cubic-bezier(0.16,1,0.3,1) both” }}
+              >
+                — {review.author}
+              </p>
             </div>
 
             <div className="mt-8 flex items-center gap-3 border-t border-border pt-6">

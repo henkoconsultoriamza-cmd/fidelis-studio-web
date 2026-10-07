@@ -20,7 +20,7 @@ export function Team() {
               className="reveal relative"
               style={{ marginTop: index === 1 ? undefined : undefined }}
             >
-              <div className="relative overflow-hidden rounded-[4px]">
+              <div className="group relative overflow-hidden rounded-[4px]">
                 {member.image ? (
                   <img
                     src={member.image}
@@ -29,7 +29,7 @@ export function Team() {
                     height={1200}
                     loading="lazy"
                     decoding="async"
-                    className="aspect-[3/4] w-full object-cover grayscale"
+                    className="aspect-[3/4] w-full object-cover grayscale transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                 ) : (
                   <div aria-hidden="true" className="aspect-[3/4] w-full bg-surface" />
