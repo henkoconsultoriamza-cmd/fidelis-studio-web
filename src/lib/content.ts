@@ -1,5 +1,3 @@
-import { supabase } from "@/integrations/supabase/client";
-import { resolveImageUrl } from "@/lib/media";
 import {
   BOOKING_URL,
   BRAND,
