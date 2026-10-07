@@ -10,67 +10,59 @@ export function Location() {
           Encontranos<span className="text-acid">.</span>
         </h2>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="reveal">
-            <p className="label-tech">Dirección</p>
-            <p className="mt-3 text-lg">
-              {brand.name}
-              <br />
-              {contact.street}
-              <br />
-              {contact.cityLine}
-            </p>
+        <div className="mt-12 grid items-stretch gap-10 lg:grid-cols-2 lg:gap-16">
+          <div className="reveal flex flex-col justify-between gap-10 rounded-[4px] border border-border p-8 md:p-10">
+            <div>
+              <p className="label-tech">Dirección</p>
+              <p className="mt-3 text-lg">
+                {brand.name}
+                <br />
+                {contact.street}
+                <br />
+                {contact.cityLine}
+              </p>
 
-            {sections.horarios && hours.length > 0 ? (
-              <>
-                <p className="label-tech mt-10">Horarios</p>
-                <dl className="mt-3 divide-y divide-border border-y border-border">
-                  {hours.map((h) => (
-                    <div key={h.days} className="flex items-baseline justify-between gap-4 py-3">
-                      <dt className="text-sm text-muted-foreground">{h.days}</dt>
-                      <dd className="text-sm">{h.time}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </>
-            ) : null}
-            <p className="label-tech mt-4 text-acid">{contact.note}</p>
+              {sections.horarios && hours.length > 0 ? (
+                <>
+                  <p className="label-tech mt-10">Horarios</p>
+                  <dl className="mt-3 divide-y divide-border border-y border-border">
+                    {hours.map((h) => (
+                      <div key={h.days} className="flex items-baseline justify-between gap-4 py-3">
+                        <dt className="text-sm text-muted-foreground">{h.days}</dt>
+                        <dd className="text-sm">{h.time}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </>
+              ) : null}
+              <p className="label-tech mt-4 text-foreground/40">{contact.note}</p>
+            </div>
 
-            <ul className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+            <ul className="flex flex-wrap gap-x-8 gap-y-3 border-t border-border pt-8 text-sm">
               {contact.phone ? (
                 <li>
-                  <a className="hover:text-acid" href={contact.phoneHref}>
+                  <a className="transition-colors hover:text-foreground/60" href={contact.phoneHref}>
                     {contact.phone}
                   </a>
                 </li>
               ) : null}
               {sections.whatsapp && contact.whatsapp ? (
                 <li>
-                  <a
-                    className="hover:text-acid"
-                    href={contact.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a className="transition-colors hover:text-foreground/60" href={contact.whatsapp} target="_blank" rel="noopener noreferrer">
                     WhatsApp
                   </a>
                 </li>
               ) : null}
               {contact.instagram ? (
                 <li>
-                  <a
-                    className="hover:text-acid"
-                    href={contact.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a className="transition-colors hover:text-foreground/60" href={contact.instagram} target="_blank" rel="noopener noreferrer">
                     {contact.instagramHandle}
                   </a>
                 </li>
               ) : null}
               {contact.email ? (
                 <li>
-                  <a className="hover:text-acid" href={`mailto:${contact.email}`}>
+                  <a className="transition-colors hover:text-foreground/60" href={`mailto:${contact.email}`}>
                     {contact.email}
                   </a>
                 </li>
@@ -79,7 +71,7 @@ export function Location() {
           </div>
 
           <div className="reveal flex flex-col overflow-hidden rounded-[4px] border border-border">
-            <div className="relative h-[420px] md:h-[500px]">
+            <div className="relative flex-1 min-h-[380px]">
               <iframe
                 title="Ubicación Fidelis Studio"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.6!2d-68.8446197!3d-32.8549214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e0891894483c1%3A0x2338507efeae7d31!2sPatricias%20Mendocinas%20826%2C%20Las%20Heras%2C%20Mendoza!5e0!3m2!1ses!2sar!4v1"
