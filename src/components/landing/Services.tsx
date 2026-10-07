@@ -1,11 +1,8 @@
-import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { useSiteContent } from "@/hooks/use-site-content";
 
 export function Services() {
-  const [active, setActive] = useState<string | null>(null);
   const { services, booking } = useSiteContent();
-  const activeService = services.find((s) => s.id === active);
 
   if (services.length === 0) return null;
 
@@ -30,10 +27,7 @@ export function Services() {
               href={booking.url}
               target={booking.newTab ? "_blank" : undefined}
               rel={booking.newTab ? "noopener noreferrer" : undefined}
-              onMouseEnter={() => setActive(service.id)}
-              onMouseLeave={() => setActive(null)}
-              onFocus={() => setActive(service.id)}
-              onBlur={() => setActive(null)}
+
               className="reveal group grid grid-cols-[auto_1fr_auto] items-baseline gap-x-4 gap-y-2 border-b border-border py-6 transition-colors duration-300 hover:text-acid focus-visible:text-acid md:grid-cols-[3rem_minmax(0,1.1fr)_minmax(0,1fr)_6rem_7rem_3rem] md:items-center md:gap-x-6 md:py-8"
             >
               <span className="label-tech transition-colors group-hover:text-acid">
@@ -68,23 +62,6 @@ export function Services() {
             </a>
           ))}
 
-          {/* Fotografía flotante solo en escritorio */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute top-1/2 right-6 hidden h-72 w-56 -translate-y-1/2 overflow-hidden rounded-[4px] transition-opacity duration-300 xl:block"
-            style={{ opacity: activeService ? 1 : 0 }}
-          >
-            {activeService?.image ? (
-              <img
-                src={activeService.image}
-                alt=""
-                loading="lazy"
-                width={560}
-                height={720}
-                className="h-full w-full object-cover"
-              />
-            ) : null}
-          </div>
         </div>
       </div>
     </section>
