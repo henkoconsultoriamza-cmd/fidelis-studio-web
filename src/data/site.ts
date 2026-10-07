@@ -167,16 +167,16 @@ export const HOURS = [
 export const HOURS_SHORT = "Lun a vie 10–20 · Sáb 9–18 · Dom cerrado";
 
 export const CONTACT = {
-  street: "Av. Ejemplo 1234",
-  cityLine: "Mendoza, Argentina",
+  street: "Patricias Mendocinas 826",
+  cityLine: "Las Heras, Mendoza",
   phone: "+54 261 555 1234",
   phoneHref: "tel:+542615551234",
   whatsapp: "https://wa.me/542615551234",
   whatsappLabel: "+54 261 555 1234",
   email: "hola@fidelisstudio.com",
-  instagram: "https://instagram.com/fidelisstudio",
-  instagramHandle: "@fidelisstudio",
-  maps: "https://www.google.com/maps/search/?api=1&query=Av.+Ejemplo+1234+Mendoza+Argentina",
+  instagram: "https://instagram.com/f.idelis_studio",
+  instagramHandle: "@f.idelis_studio",
+  maps: "https://www.google.com/maps/place/Patricias+Mendocinas+826,+M5539+Las+Heras,+Mendoza/@-32.8549214,-68.8446197,17z",
   note: "Atención con turno previo",
 };
 
