@@ -78,14 +78,14 @@ export function Location() {
             </ul>
           </div>
 
-          <div className="reveal flex min-h-[320px] flex-col overflow-hidden rounded-[4px] border border-border">
-            <div className="relative flex-1 min-h-[280px]">
+          <div className="reveal flex flex-col overflow-hidden rounded-[4px] border border-border">
+            <div className="relative h-[420px] md:h-[500px]">
               <iframe
                 title="Ubicación Fidelis Studio"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.6!2d-68.8446197!3d-32.8549214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e0891894483c1%3A0x2338507efeae7d31!2sPatricias%20Mendocinas%20826%2C%20Las%20Heras%2C%20Mendoza!5e0!3m2!1ses!2sar!4v1"
                 width="100%"
                 height="100%"
-                style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
+                style={{ border: 0, filter: "grayscale(100%) invert(92%) contrast(90%)" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
