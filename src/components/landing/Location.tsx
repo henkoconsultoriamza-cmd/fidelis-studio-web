@@ -78,28 +78,26 @@ export function Location() {
             </ul>
           </div>
 
-          <div className="reveal flex min-h-[320px] flex-col justify-between rounded-[4px] border border-border bg-elevated p-6 md:p-10">
-            <div
-              aria-hidden="true"
-              className="grid h-40 grid-cols-6 gap-px overflow-hidden rounded-[4px] bg-border"
-            >
-              {Array.from({ length: 24 }).map((_, i) => (
-                <span
-                  key={i}
-                  className={i === 9 ? "bg-acid" : i % 5 === 0 ? "bg-surface" : "bg-background"}
-                />
-              ))}
+          <div className="reveal flex min-h-[320px] flex-col overflow-hidden rounded-[4px] border border-border">
+            <div className="relative flex-1 min-h-[280px]">
+              <iframe
+                title="Ubicación Fidelis Studio"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.6!2d-68.8446197!3d-32.8549214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e0891894483c1%3A0x2338507efeae7d31!2sPatricias%20Mendocinas%20826%2C%20Las%20Heras%2C%20Mendoza!5e0!3m2!1ses!2sar!4v1"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 h-full w-full"
+              />
             </div>
-            <div className="mt-8">
-              <p className="label-tech">Mapa</p>
-              <p className="mt-2 max-w-sm text-sm text-muted-foreground">
-                A tres cuadras del centro, con estacionamiento sobre la calle lateral.
-              </p>
+            <div className="bg-elevated px-6 py-5">
               <a
                 href={contact.maps}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex min-h-12 items-center justify-center rounded-[4px] border border-acid px-6 text-sm tracking-[0.12em] text-acid uppercase transition-colors hover:bg-acid hover:text-acid-foreground"
+                className="inline-flex min-h-11 items-center justify-center rounded-[4px] border border-foreground/30 px-6 text-sm tracking-[0.12em] uppercase transition-colors hover:border-foreground hover:text-foreground"
               >
                 Cómo llegar
               </a>
