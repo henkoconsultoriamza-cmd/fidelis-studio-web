@@ -85,29 +85,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Precisión, estilo y ritual. Técnica precisa y atención personalizada en cada visita.",
       },
       { name: "author", content: "Fidelis Studio" },
+      { name: "robots", content: "index, follow" },
       { property: "og:title", content: "Fidelis Studio | Barbería de autor en Mendoza" },
-      {
-        property: "og:description",
-        content: "Precisión, estilo y ritual. Técnica precisa y atención personalizada en cada visita.",
-      },
+      { property: "og:description", content: "Precisión, estilo y ritual. Técnica precisa y atención personalizada en cada visita." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://fidelis-studio-web.vercel.app" },
+      { property: "og:image", content: "https://fidelis-studio-web.vercel.app/img/og-image.jpg" },
+      { property: "og:locale", content: "es_AR" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Fidelis Studio | Barbería de autor en Mendoza" },
       { name: "twitter:description", content: "Precisión, estilo y ritual. Técnica precisa y atención personalizada en cada visita." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bb9c36b9-cac0-420d-b999-6862447c6cb1/id-preview-3a7f5ea5--92eebad5-c81e-4954-aa6a-a8b909ed12b6.lovable.app-1785625626538.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bb9c36b9-cac0-420d-b999-6862447c6cb1/id-preview-3a7f5ea5--92eebad5-c81e-4954-aa6a-a8b909ed12b6.lovable.app-1785625626538.png" },
     ],
     links: [
+      { rel: "canonical", href: "https://fidelis-studio-web.vercel.app" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap",
       },
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
@@ -117,11 +114,37 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+const JSON_LD = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Fidelis Studio",
+  "description": "Barberia de autor en Las Heras, Mendoza. Precision, estilo y ritual.",
+  "url": "https://fidelis-studio-web.vercel.app",
+  "telephone": "+5492616686085",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Patricias Mendocinas 826",
+    "addressLocality": "Las Heras",
+    "addressRegion": "Mendoza",
+    "addressCountry": "AR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -32.8549214,
+    "longitude": -68.8446197
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "14:00", "closes": "20:00" }
+  ],
+  "sameAs": ["https://www.instagram.com/f.idelis_studio"]
+});
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="es-AR">
       <head>
         <HeadContent />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON_LD }} />
       </head>
       <body>
         {children}
